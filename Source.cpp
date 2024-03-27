@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int romanCharValue(char r) {
@@ -32,10 +33,14 @@ int convertRomanToInt(string s) {
 
 int main() {
 	
-	string L = "L";
-	string M = "M";
-	string A = "MLMLMLMX";
+	string input;
+	while (true) {
+		cout << "Enter Roman numeral or Q to quit: ";
+		getline(cin, input);
+		if (input == "Q" || input == "q")break;
 
-	cout << convertRomanToInt(M) << " " << convertRomanToInt(L) << " " << convertRomanToInt(A);
+		cout << input << " = " << convertRomanToInt(input) << endl;
+	}
+	
 	return 0;
 }
